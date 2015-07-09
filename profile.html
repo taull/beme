@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Beme</title>
+  <meta name="description" content="Beseech Me">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type='text/css' href="styles/main.css">
+</head>
+<body>
+
+<header>
+	<div class="header-container">
+		<div class="header-logo">
+			<!-- <img src="images/beme-beer.png"> -->
+			<img src="images/beme-logo-text.png">
+		</div>
+
+		<li id="nav-toggle">
+		  <div id="nav-icon1">
+		    <span></span>
+		    <span></span>
+		    <span></span>
+		  </div>
+		</li>
+	</div>
+</header>
+
+
+
+<div class="profile-container">
+
+	<div class="profile-left">
+		<div class="search-container">
+			<span class="fa fa-search"></span>
+			<input type="text" placeholder="Search Bars and Restaurants">
+		</div>
+
+		<div class="profile-beer-list">
+		</div>
+
+	</div>
+
+	<div class="profile-right">
+
+	  <div class="posting-options">
+	    <div>Comment</div>
+	    <div>Upload Photo</div>
+	  </div>
+
+	  <div class="options-caret">
+	    <span class="fa fa-caret-up"></span>
+	  </div>
+
+	  <div class="profile-tools">
+		<textarea id="business-status" value=status autoresize=true maxHeight=200 required=true placeholder="What's going on?"></textarea>
+		<span class="fa fa-check-circle"></span><p>Verified</p>
+		<button>Post</button>
+	  </div>
+
+	  <!-- <div class="profile-feed">
+	  	<li><span class="fa fa-caret-down"></span></li>
+	  	<li><span class="fa fa-caret-down"></span></li>
+	  	<li><span class="fa fa-caret-down"></span></li>
+	  </div> -->
+	</div>
+</div>
+
+<script src='bower_components/jquery/dist/jquery.min.js'></script>
+<script src='bower_components/underscore/underscore-min.js'></script>
+<script src='bower_components/backbone/backbone-min.js'></script>
+<script src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
+<script src='scripts/main.js'></script>
+</body>
