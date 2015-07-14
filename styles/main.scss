@@ -1,6 +1,7 @@
 /* Fonts */
 
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,800,900,300italic,400italic);
+@import url(http://fonts.googleapis.com/css?family=Lobster);
 
 /* Colors */
 
@@ -10,8 +11,10 @@ $primary-color-light: #ECEFF1;
 
 $secondary-color-dark: #0277BD;
 $secondary-color-medium: #0277BD;
-$secondary-color-light: #0277BD;
+$secondary-color-light: #03A9F4;
 
+$green-light: #8BC34A;
+$green-dark: #689F38;
 
 $text-color: #ECEFF1;
 
@@ -34,9 +37,9 @@ body {
 
 header {
 	width: 100%;
-	height: 60px;
+	height: 85px;
 	position: absolute;
-	/*background: $primary-color-medium;*/
+	background: $primary-color-dark;
 	left: 0;
 	z-index:10;
 	padding-top:30px;
@@ -49,14 +52,63 @@ header {
 
 .header-logo {
 	display: inline-block;
-	width: 260px;
-	height: 60px;
-	padding-left:15px;
+	padding-top:0px;
+
+	div {
+		display: inline-block;
+		width: 35px;
+		height: 35px;
+		text-align: center;
+		background: $primary-color-medium;
+		border-radius: 3px;
+		margin-top:-12px;
+		margin-right:10px;
+		padding-top:5px;
+	}
 
 	img {
 		display: inline-block;
-		height: 30px;
+		height: 40px;
 		width: auto;
+	}
+
+	span {
+		display: inline-block;
+		vertical-align: top;
+		font-size: 24px;
+		color: $primary-color-medium;
+		margin-right: 25px;
+	}
+
+}
+
+.header-right {
+	float:right;
+	width:360px;
+	margin-top:-15px;
+	text-align: right;
+
+	li {
+		display:inline-block;
+		vertical-align: top;
+		width: 85%;
+	}
+
+	p {
+		font-size: 16px;
+		color:$text-color;
+		display:inline-block;
+		vertical-align:top;
+		font-weight: 300;
+		padding-top:18px;
+	}
+
+	img {
+		width: 24px;
+		height: 24px;
+		margin-top:18px;
+		display: inline-block;
+		vertical-align: top;
 	}
 }
 
@@ -68,6 +120,11 @@ header {
 	padding: 30px;
 	position: relative;
 	top: 0px;
+}
+
+.home-search {
+	width: 320px;
+	margin: 0 auto;
 }
 
 .login-logo {
@@ -167,13 +224,14 @@ header {
 
 .options-caret {
 
-	text-align:center;
+	text-align:right;
+	padding-right:30px;
 
 	span {
-		font-size: 36px;
-		color: $primary-color-light;
+		font-size: 48px;
+		color: $primary-color-medium;
 		position: relative;
-		margin-bottom: -12px;
+		margin-top: -20px;
 		vertical-align: bottom;
 	}
 }
@@ -181,15 +239,17 @@ header {
 
 /* Search */
 
-.search-container {
+.search-container, 
+.search-location {
 	display: inline-block;
 	vertical-align: top;
 	width: 100%;
 	height: 60px;
 	position: relative;
 	background: $primary-color-medium;
+	border-bottom: 0px solid $primary-color-dark;
 	margin-left: auto;
-	border-radius: 0px;
+	border-radius: 3px;
 
 	span {
 		display: inline-block;
@@ -214,7 +274,7 @@ header {
 		border:0;
 		outline:0;
 		border-radius:0;
-		width: 70%;
+		width: 75%;
 		background: transparent;
 		font-weight: 300;
 		color: $text-color;
@@ -222,6 +282,73 @@ header {
 
 	input::-webkit-input-placeholder {
 		color: #B0BEC5;
+	}
+}
+
+.search-location {
+	width: 100%;
+	display: inline-block;
+}
+
+.search-button {
+	width: 30%;
+	display: inline-block;
+	vertical-align: top;
+	height: 60px;
+	background: $secondary-color-dark;
+	text-align: center;
+	margin: 0 auto;
+
+	p {
+		font-size: 16px;
+		color: $primary-color-light;
+		font-weight: 300;
+		padding-top: 20px;
+	}
+}
+
+.location-button {
+	width: 200px;
+	height: 50px;
+	margin: 0 auto;
+	background: $secondary-color-dark;
+	text-align: center;
+	border-radius: 3px;
+	margin-top:20px;
+
+	span {
+		color: $primary-color-light;
+		font-size: 18px;
+		display: inline-block;
+		padding-top: 17px;
+
+	}
+	
+	p {
+		display: inline-block;
+		vertical-align: top;
+		color: $primary-color-light;
+		font-size: 18px;
+		font-weight: 300;
+		padding-top: 14px;
+		padding-left: 10px;
+	}
+
+}
+
+.or-button {
+
+	width: 300px;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 15px;
+
+	p {
+		font-size: 36px;
+		color:$primary-color-light;
+		font-style:italic;
+		text-transform: lowercase;
+		font-family: 'Lobster', cursive;
 	}
 }
 
@@ -233,6 +360,7 @@ header {
 	position:relative;
 	top:85px;
 	padding-bottom:50px;
+	transition: 250ms;
 }
 
 .profile-left {
@@ -242,15 +370,303 @@ header {
 	vertical-align:top;
 }
 
+.profile-heading {
+	width: 100%;
+	background:$primary-color-dark;
+}
+
+.profile-options {
+	width: 100%;
+	background:$primary-color-medium;
+	/*margin-bottom: 20px;*/
+
+	li {
+		width: 25%;
+		display: inline-block;
+		color:$primary-color-medium;
+		font-size: 12px;
+		text-align: center;
+		padding: 20px 0;
+		font-weight: 300;
+		border-right: 1px solid $primary-color-dark;
+		border-left: 1px solid #455A64;
+		/*border-bottom: 1px solid $primary-color-dark;*/
+	}
+
+	li:last-child {
+		border-right:0;
+	}
+
+	li:first-child {
+		border-left:0;
+	}
+
+	span {
+		display: block;
+		font-size:24px;
+		padding-bottom:5px;
+	}
+
+	img {
+		height: 30px;
+		width: auto;
+	}
+}
+
+
+
+.profile-info {
+	width: 100%;
+	text-align:center;
+	background: $primary-color-medium;
+	border-top:1px solid #455A64;
+	margin-bottom: 0px;
+	height: 50px;
+	margin-bottom:25px;
+
+	span {
+		font-size: 36px;
+		color: $primary-color-medium;
+		position: relative;
+		left: 0;
+		margin: 0 auto;
+		top: -15px;
+		z-index: 1000000;
+  		vertical-align: bottom;
+  		margin-bottom:-12px;
+	}
+}
+
+.profile-statistics {
+	width: 100%;
+	background: $primary-color-medium;
+	border-top:1px solid #455A64;
+	margin-bottom: 0px;
+	margin-bottom:25px;
+
+	li {
+		width: 33.3333%;
+		display: inline-block;
+		text-align: center;
+		padding: 25px 0; 
+	}
+
+	h1 {
+		font-size: 36px;
+		color: $secondary-color-light;
+	}
+
+	p {
+		font-size: 12px;
+		font-weight: 300;
+		color: $primary-color-light;
+	}
+
+}
+
+
+.beer-search {
+	width: 100%;
+	background: $primary-color-medium;
+	border-bottom: 1px solid $primary-color-dark;
+
+	span {
+		display: inline-block;
+		vertical-align: top;
+		width: 10%;
+		font-size: 18px;
+		color: $primary-color-light;
+		text-align: center;
+		padding-top: 20px;
+	}
+
+	input {
+		display: inline-block;
+		color: $primary-color-light;
+
+		vertical-align: top;
+		height: 60px;
+		width: 90%;
+		border: 0;
+		background: transparent;
+		outline: 0;
+		border-radius: 0;
+		font-size: 18px;
+		font-weight: 300;
+	}
+
+	input::-webkit-input-placeholder {
+		color: #B0BEC5;
+	}
+}
+
+.module-header {
+	width: 100%;
+	background: $primary-color-medium;
+	padding:15px 15px ;
+	border-bottom: 1px solid $primary-color-dark;
+
+	img {
+		height: 25px;
+		width: auto;
+		margin-right:5px;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	p {
+		color:$text-color;
+		font-size: 16px;
+		font-weight: 300;
+		display: inline-block;
+		vertical-align: top;
+		padding-top:3px;
+	}
+
+	a {
+		color:$secondary-color-light;
+		font-size: 14px;
+		text-decoration: none;
+		float: right;
+		padding-top:5px;
+		font-weight: 300;
+	}
+}
+
+
 .profile-beer-list {
 	width: 100%;
-	height: 400px;
-	background:$primary-color-light;
+	background:$primary-color-medium;
+
+
+	ul {
+		list-style: none;
+		padding-left: 0;
+		/*border-bottom: 1px solid #FFF;*/
+
+	}
+
+	li {
+		display: inline-block;
+		width: 100%;
+		padding: 25px;
+		border-bottom:1px solid $primary-color-dark;
+		border-top: 1px solid #455A64;
+	}
+
+	span {
+		width: 5%;
+		text-align: center;
+		font-size: 16px;
+		display: inline-block;
+		vertical-align: top;
+		color: $primary-color-light;
+	}
+}
+
+.beer-list-header {
+	border-bottom: 1px solid $primary-color-dark;
+}
+
+.beer-name {
+	width: 75%;
+	display: inline-block;
+	vertical-align: top;
+	padding-left:5px;
+
+	h1 {
+		font-size: 14px;
+		color: $secondary-color-light;
+	}
+
+	p {
+		font-size: 12px;
+		font-style: italic;
+		display: block;
+		color: $primary-color-light;
+	}
+}
+
+.beer-abv {
+	width: 20%;
+	display: inline-block;
+	vertical-align: top;
+	text-align: right;
+
+	p {
+		font-size: 14px;
+		color:$primary-color-light;
+	}
+}
+
+.beer-search-results {
+	width: 100%;
+	background:$primary-color-medium;
+	border-bottom: 1px solid #455A64;
+
+
+	ul {
+		list-style: none;
+		padding-left: 0;
+	}
+
+	li {
+		display: inline-block;
+		width: 100%;
+		padding: 25px;
+		border-bottom:1px solid $primary-color-dark;
+		border-top: 1px solid #455A64;
+	}
+
+	span {
+		width: 10%;
+		text-align: center;
+		font-size: 30px;
+		display: inline-block;
+		vertical-align: top;
+		color: $green-light;
+	}
+}
+
+.beer-results-name {
+	width: 70%;
+	display: inline-block;
+	vertical-align: top;
+	padding-left:5px;
+
+	h1 {
+		font-size: 14px;
+		color: $secondary-color-light;
+	}
+
+	p {
+		font-size: 12px;
+		font-style: italic;
+		display: block;
+		color: $text-color;
+	}
+}
+
+.beer-results-abv {
+	width: 20%;
+	display: inline-block;
+	vertical-align: top;
+	text-align: right;
+
+	p {
+		font-size: 14px;
+		color:$text-color;
+	}
 }
 
 .profile-right {
 	display: inline-block;
 	width: 360px;
+	transition:250ms;
+}
+
+.profile-right-shift {
+	margin-top: 156px;
 }
 
 .profile-tools {
@@ -258,6 +674,7 @@ header {
 	background:$primary-color-light;
 	text-align: left;
 	padding: 25px 15px 30px;
+	border-bottom:1px solid #dfdfdf;
 
 	button {
 		font-size:14px;
@@ -277,7 +694,7 @@ header {
 		margin-top:20px;
 		display: inline-block;
 		font-size:16px;
-		color:#689F38;
+		color: $green-dark;
 	}
 
 	p {
@@ -295,16 +712,19 @@ header {
 .profile-feed {
 	width: 100%;
 	background:$primary-color-light;
-	padding: 25px;
-	margin-top:20px;
+
+
+	ul {
+		list-style: none;
+		padding-left: 0;
+	}
 
 	li {
 		width: 100%;
-		background:#fff;
-		border: 1px solid #dfdfdf;
-		height: 120px;
-		margin-bottom:15px;
-		position: relative;
+		border-top: 1px solid #fff;
+		border-bottom: 1px solid #dfdfdf;
+			position: relative;
+		padding: 30px 20px;
 
 		span {
 			position:absolute;
@@ -317,7 +737,90 @@ header {
 	}
 }
 
+.feed-name {
+	width: 75%;
+	display: inline-block;
 
+	p {
+		font-size: 12px;
+		font-style: italic;
+		color: $primary-color-medium;
+		font-weight: 300;
+	}
+
+	h1 {
+		font-size: 16px;
+		color: $primary-color-medium;
+	}
+}
+
+.feed-ago {
+	width: 25%;
+	display: inline-block;
+	text-align: right;
+	vertical-align: top;
+
+	p {
+		font-size: 12px;
+		color: $primary-color-medium;
+		font-weight: 300;
+	}
+}
+
+.feed-status {
+	width: 100%;
+	display: inline-block;
+	padding-top:10px;
+
+	p {
+		font-size: 16px;
+		line-height: 24px;
+		font-weight: 300;
+		color: $primary-color-medium;
+	}
+}
+
+.view-all {
+	width: 100%;
+	border-top:1px solid #fff;
+	background:$primary-color-light;
+	text-align: center;
+	padding: 15px 0;
+	margin-bottom: 25px;
+
+	a {
+		font-size: 16px; 
+		color: $secondary-color-dark;
+
+		font-weight: 300;
+		text-decoration: none;
+	}
+}
+
+.view-all-dark {
+	width: 100%;
+	border-top:1px solid #455A64;
+	background:$primary-color-medium;
+	text-align: center;
+	padding: 15px 0;
+	margin-bottom: 25px;
+
+	a {
+		font-size: 16px; 
+		color: $secondary-color-light;
+		text-decoration: none;
+		font-weight: 300;
+	}
+}
+
+/* Homepage Video */
+
+.homepage-video {
+	width: 100%;
+	text-align: center;
+	padding: 100px 0;
+	background:$primary-color-medium;
+}
 /* Post Status */
 
 .posting-options {
@@ -327,7 +830,7 @@ header {
 	text-align: center;
 	background:$primary-color-medium;
 	margin-top:0px;
-	margin-bottom:-25px;
+	margin-bottom:-28px;
 
 	div {
 		width: 50%;
@@ -346,7 +849,7 @@ header {
 	}
 
 	div:nth-child(2) {
-		background:#01579B;
+		background:#455A64;
 		color:$text-color;
 	}
 
@@ -376,6 +879,22 @@ header {
     margin: 0 auto;
 }
 
+/* Slideout Panel */
+
+.slideout {
+	position: absolute;
+	width: 360px;
+	/* height: 100%; */
+	/* padding: 25px; */
+	right: 0;
+	top: -156px;
+	transition: 250ms;
+}
+
+.toggle-slideout {
+	top: 0px;
+}
+
 /* Animated Hamburger Toggle */
 
 /* Icon 1 */
@@ -383,15 +902,18 @@ header {
 #nav-toggle {
 	display: inline-block;
 	vertical-align: top;
-	float: right;
-	width: 47px;
+	width: 15%;
 	height: 60px;
 	cursor: pointer;
 	padding-top: 19px;
-	margin-top:-15px;
+	padding-left: 7px;
+	/*background: $primary-color-medium;*/
+	border-radius: 3px;
+	/*margin-left:10px;*/
 }
 
 #nav-icon1 {
+float:left;
   width: 15%;
   height: 42px;
   position: relative;
@@ -473,16 +995,29 @@ header {
 
 	}
 
+	.header-logo {
+		padding-left: 15px;
+	}
+
 	.header-container, 
-	.profile-container, 
+	.profile-container {
+		width: 100%;
+		margin: 0 auto;
+	}
+
 	.posting-options {
 		width: 100%;
 	}
+
 
 	.profile-left, 
 	.profile-right {
 		width: 100%;
 		display:block;
+	}
+
+	.view-all {
+		margin-bottom: 0;
 	}
 
 	.home-container {
@@ -505,12 +1040,86 @@ header {
 		width:100%;
 	}
 
-	.search-container {
+	.login-logo {
 		width: 100%;
 	}
 
-	.login-logo {
+	#nav-toggle {
+		width:23%;
+		padding-left:0;
+	}
+
+	.header-right {
+		width: 200px;
+		margin-top:-10px;
+		padding-right: 15px;
+
+		li {
+			width:70%;
+			padding-right:5px;
+		}
+	}
+
+	.options-caret {
+		display: none;
+	}
+
+	.profile-options {
+
+		li {
+			border-bottom: 1px solid $primary-color-dark;
+			border-top: 1px solid #455A64;	
+
+
+		}
+	}
+
+
+
+
+	.search-container {
+		width:100%;
+		margin:0 auto;
+		border-bottom:1px solid $primary-color-dark;
+
+		span {
+			width: 15%;
+		}
+	}
+
+	.home-search {
 		width: 100%;
+	}
+
+	.profile-info {
+		/*margin-bottom:-25px;*/
+	}
+
+	.slideout {
+		width:100%;
+		top:-162px;
+		position:absolute;
+		padding-top:0px;
+	}
+
+	.beer-list-header {
+		border-top:1px solid #455A64;
+	}
+
+	.status-header {
+		border-top:1px solid #455A64;
+	}
+
+	.profile-container-shift {
+		top: 247px;
+	}
+
+	.profile-left {
+		display:none;
+	}
+
+	.profile-right-shift {
+		margin-top:0;
 	}
 
 }
